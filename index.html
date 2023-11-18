@@ -24,9 +24,10 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body onload="init()">
     <div class="quiz_section">
       <div class="quizBox">
+      
         <!-- Sidebar-Menu -->
         <div class="nav_quiz">
           <img src="./img/logo.png" />
@@ -37,29 +38,80 @@
           </nav>
         </div>
 
+        <!-- final-Screen -->
+        <div class="quiz_container" id="endScreen" style="display: none">
+          <img src="./img/brain result.png" />
+          <div class="winnText">
+            <h2>COMPLETE HTML QUIZ</h2>
+            <span class="scoreText">
+              <p id="scoreColor">YOUR SCORE</p>
+              <b id="finalsumOfAnswers">10</b>/<b id="finalsum"></b>
+            </span>
+          </div>
+          <button class="btn btn-primary" onclick="restartGame()">REPLAY</button>
+          <img src="./img/tropy.png" class="tropy_img" />
+        </div>
+
         <!-- quiz-Container -->
-        <div class="quiz_container">
-          <h2>Frage</h2>
+        <div class="quiz_container" id="question_body">
+
+          <div
+            class="progress"
+            role="progressbar"
+            aria-label="Example with label"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <div class="progress-bar" id="progress-bar" style="width: 25%">0%</div>
+          </div>
+
+          <h2 id="currentQuestion"></h2>
           <nav>
-            <div class="card m-2">
-              <div class="card-body">Antwort 1</div>
+            <div class="card m-2 quiz_answer_card">
+              <div
+                class="card-body"
+                id="answer_1"
+                onclick="showAnswer('answer_1')"
+              ></div>
             </div>
 
-            <div class="card m-2">
-              <div class="card-body">Antwort 2</div>
+            <div class="card m-2 quiz_answer_card">
+              <div
+                class="card-body"
+                id="answer_2"
+                onclick="showAnswer('answer_2')"
+              ></div>
             </div>
 
-            <div class="card m-2">
-              <div class="card-body">Antwort 3</div>
+            <div class="card m-2 quiz_answer_card">
+              <div
+                class="card-body"
+                id="answer_3"
+                onclick="showAnswer('answer_3')"
+              ></div>
             </div>
 
-            <div class="card m-2">
-              <div class="card-body">Antwort 4</div>
+            <div class="card m-2 quiz_answer_card">
+              <div
+                class="card-body"
+                id="answer_4"
+                onclick="showAnswer('answer_4')"
+              ></div>
             </div>
           </nav>
           <div class="question_footer">
-            <span>Frage <b>1</b> von <b>5</b></span>
-            <button class="btn btn-primary">Nächste Frage</button>
+            <span
+              >Frage <b id="currentPosition"></b> von <b id="sumQuestions"></b
+            ></span>
+            <button
+              onclick="nextQuestion()"
+              class="btn btn-primary"
+              id="nextButton"
+              disabled
+            >
+              Nächste Frage
+            </button>
           </div>
         </div>
       </div>
