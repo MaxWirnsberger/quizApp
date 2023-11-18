@@ -13,10 +13,13 @@
 
 .quizBox{
     display: flex;
-    justify-content: center;
+    flex-direction: row!important;
     align-items: center;
+    width: 80vw;
     height: 50vh;
-    width: 50vw;
+    background-color: #F7F7F7;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .nav_quiz{
@@ -24,23 +27,48 @@
     flex-direction: column;
     align-items: center;
     background-color: #27355C;
+    height: 50vh;
+    width: 16%;
+    border-radius: 16px 0 0 16px;
+}
+
+.nav_quiz img{
+    padding: 8px;
+    height: 80px;
 }
 
 .nav_quiz nav{
     display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: start;
+    justify-content: center;
+    gap: 32px;
+    height: 35vh;
 }
 
 .nav_quiz nav a{
     text-decoration: none;
+    color: #FEFFFC;
+    font-size: 20px;
 }
 
 .quiz_container{
-    background-color: #F7F7F7;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 16px 0 16px;
 }
 
 .quiz_container nav{
     display: flex;
     flex-direction: column;
+    width: 100%;
+}
+
+.question_footer{
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
 }

@@ -27,11 +27,10 @@
   <body>
     <div class="quiz_section">
       <div class="quizBox">
-
         <!-- Sidebar-Menu -->
         <div class="nav_quiz">
           <img src="./img/logo.png" />
-          <nav class="card-header shadow navInactive">
+          <nav class="card-header">
             <a href="">HTML</a>
             <a href="">CSS</a>
             <a href="">JS</a>
@@ -42,14 +41,25 @@
         <div class="quiz_container">
           <h2>Frage</h2>
           <nav>
-            <a href="">Antwort 1</a>
-            <a href="">Antwort 2</a>
-            <a href="">Antwort 3</a>
-            <a href="">Antwort 4</a>
+            <div class="card m-2">
+              <div class="card-body">Antwort 1</div>
+            </div>
+
+            <div class="card m-2">
+              <div class="card-body">Antwort 2</div>
+            </div>
+
+            <div class="card m-2">
+              <div class="card-body">Antwort 3</div>
+            </div>
+
+            <div class="card m-2">
+              <div class="card-body">Antwort 4</div>
+            </div>
           </nav>
-          <div>
+          <div class="question_footer">
             <span>Frage <b>1</b> von <b>5</b></span>
-            <button>Nächste Frage</button>
+            <button class="btn btn-primary">Nächste Frage</button>
           </div>
         </div>
       </div>
