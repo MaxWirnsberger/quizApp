@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "rubik";
+  font-family: "Rubik";
 }
 
 .quiz_section {
@@ -101,6 +101,32 @@
   right: 0;
 }
 
+#startSceen {
+  background-image: url(./img/brainbg.jpg);
+}
+
+.startText {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.startText h2 {
+  font-family: "PT Sans" !important;
+}
+
+.readyText {
+  font-family: "PT Sans" !important;
+}
+
+.startButton {
+  position: absolute;
+  right: 200px;
+  bottom: 100px;
+  width: 150px;
+}
+
 .winnText {
   display: flex;
   flex-direction: column;
@@ -137,6 +163,12 @@
 
   .nav_quiz {
     height: 55vh;
+  }
+}
+
+@media (max-width: 1000px) {
+  .quiz_container img {
+    display: none;
   }
 }
 
@@ -205,7 +237,7 @@
     margin-bottom: 8px;
   }
 
-  .question_footer button{
+  .question_footer button {
     width: 100%;
   }
 
@@ -215,5 +247,5 @@
 
   .nav_quiz nav {
     gap: 16px;
-}
+  }
 }
