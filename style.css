@@ -49,8 +49,13 @@
 
 .nav_quiz nav a {
   text-decoration: none;
-  color: #fefffc;
+  color: #fefffc !important;
   font-size: 20px;
+}
+
+.nav_quiz nav a:hover {
+  cursor: pointer;
+  text-decoration: underline !important;
 }
 
 .quiz_container {
@@ -167,7 +172,7 @@
 }
 
 @media (max-width: 1000px) {
-  .quiz_container img {
+  .tropy_img{
     display: none;
   }
 }
@@ -185,6 +190,13 @@
   .progress {
     width: 83.5%;
   }
+
+  .startButton {
+    position: sticky;
+    margin-top: 32px;
+    right: 0;
+    bottom: 0;
+  }
 }
 
 @media (max-width: 650px) {
@@ -199,12 +211,16 @@
   }
 
   .nav_quiz {
-    height: auto;
+    height: 80px;
     width: 100%;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     border-radius: 16px 16px 0 0;
+  }
+
+  .nav_quiz img{
+    display: none;
   }
 
   .nav_quiz nav {
@@ -227,6 +243,10 @@
 
   .question_footer {
     margin-top: 8px;
+  }
+
+  .startText {
+    margin-top: 88px;
   }
 }
 

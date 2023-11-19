@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>quizApp</title>
+    <link rel="icon" type="image/x-icon" href="/img/logo.png" />
     <link rel="stylesheet" href="./style.css" />
     <script src="./script.js"></script>
 
@@ -24,48 +25,58 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body onload="init()">
+  <body>
     <div class="quiz_section">
       <div class="quizBox">
-      
         <!-- Sidebar-Menu -->
         <div class="nav_quiz">
           <img src="./img/logo.png" />
-          <nav class="card-header">
-            <a href="">HTML</a>
-            <a href="">CSS</a>
-            <a href="">JS</a>
+          <nav class="card-header" id="sideMenu">
+            <a id="HTMLQuestions" onclick="selectQuestionType(1)">HTML</a>
+            <a id="CSSQuestions" onclick="selectQuestionType(2)">CSS</a>
+            <a id="JSQuestions" onclick="selectQuestionType(3)">JS</a>
           </nav>
         </div>
 
         <!-- start-Screen -->
         <div class="quiz_container" id="startSceen">
-          <div class="startText">
-            <h2>WELCOME to <br> The Answer HTML Quiz</h2>
-            <span class="readyText">
-              Ready for the Challenge?
-            </span>
+          <div class="startText" id="startQuestionText">
+            <h2>
+              WELCOME to <br />
+              The Answer HTML Quiz
+            </h2>
+            <span class="readyText"> Ready for the Challenge? </span>
           </div>
-          <button class="btn btn-warning startButton" onclick="startGame()">START NOW</button>
+          <button
+            id="startButton"
+            class="btn btn-warning startButton"
+            onclick="startGame()"
+            disabled
+          >
+            START NOW
+          </button>
         </div>
 
         <!-- final-Screen -->
         <div class="quiz_container" id="endScreen" style="display: none">
           <img src="./img/brain result.png" />
           <div class="winnText">
-            <h2>COMPLETE HTML QUIZ</h2>
+            <div id="winnText">
+              <h2>COMPLETE HTML QUIZ</h2>
+            </div>
             <span class="scoreText">
               <p id="scoreColor">YOUR SCORE</p>
               <b id="finalsumOfAnswers">10</b>/<b id="finalsum"></b>
             </span>
           </div>
-          <button class="btn btn-primary" onclick="restartGame()">REPLAY</button>
+          <button class="btn btn-primary" onclick="restartGame()">
+            REPLAY
+          </button>
           <img src="./img/tropy.png" class="tropy_img" />
         </div>
 
         <!-- quiz-Container -->
         <div class="quiz_container" id="question_body" style="display: none">
-
           <div
             class="progress"
             role="progressbar"
@@ -74,7 +85,9 @@
             aria-valuemin="0"
             aria-valuemax="100"
           >
-            <div class="progress-bar" id="progress-bar" style="width: 25%">0%</div>
+            <div class="progress-bar" id="progress-bar" style="width: 25%">
+              0%
+            </div>
           </div>
 
           <h2 id="currentQuestion"></h2>
